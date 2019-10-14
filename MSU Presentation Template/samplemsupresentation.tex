@@ -1,0 +1,116 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme[]{msubeamer}
+% BACKGROUND CHOICES: windows(default),chevron,diamonds,antique,circles,ornate,eyes,hexagons
+
+\usepackage{multicol, bibentry}
+
+\title[Sample Presentation]{\bfseries A Sample Presentation with {\tt msubeamer}}
+\author{Author Name Here}
+\institute{Department Info Here} % use this for where you're presenting
+\date{Date Here}
+
+\begin{document}
+
+\maketitleframe
+
+\begin{frame}{Outline}
+\label{outline}
+    \tableofcontents
+    \hyperlink{back}{\beamerbutton{Go Forward}}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Section Title}
+\subsection{Subsection Title}
+
+\begin{frame}{\bfseries Frame 1: Here is some text}
+
+Hey!  Here is some text.  How do you like it?
+
+And, here's an equation:
+\[
+x^{2} + 2x + 1 = 0
+\]
+And here is some more text!
+
+Here is some inline math: $2+2=4$.
+
+\end{frame}
+
+\subsection{Subsection Title 2}
+\begin{frame}{\bfseries Frame 2: All About Blocks}
+
+\begin{block}{\bfseries Block}
+Here is a standard block. 
+\end{block}
+
+\begin{exampleblock}{\bfseries Example}
+Here is an example block, it automatically changes the color. 
+\end{exampleblock}
+
+\begin{alertblock}{\bfseries Alert}
+Here is an alert block, it automatically changes the color. 
+\end{alertblock}
+\end{frame}
+
+
+\section{Section Title 2}
+\subsection{Subsection Title}
+
+\begin{frame}{\bfseries Frame 3: Itemizing and Enumerating}
+
+\begin{itemize}
+\item one item
+\item two item
+\end{itemize}
+
+\begin{enumerate}
+\item one enum
+\item two enum
+\end{enumerate}
+
+\begin{block}{Items in a Block}
+\begin{itemize}
+    \item tada
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Frame 4: Multiple Columns}
+    \begin{alertblock}{Wow!}
+        Here is a frame with columns. This text is above the column environment.
+    \end{alertblock}
+
+    
+\begin{multicols}{2}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=.5]{spartans.jpg}
+\caption{Here is a Spartan S}\label{fig:spartans}
+\end{figure}
+\columnbreak
+
+Here is some text to the right of that figure. 
+In order to refer back to the figures, you can label them with {\ttfamily\textbackslash label\{...\}}, and then refer to them with {\ttfamily\textbackslash ref\{...\}}.  For example, I really like Figure \ref{fig:spartans}!
+
+\end{multicols}
+\end{frame}
+
+\begin{frame}{Frame 5: What's this button do?}
+\label{back}
+    \hyperlink{outline}{\beamerbutton{Go Back}}
+    Here is a reference \cite{cite1}.
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% You'll probably only want to keep one of these...
+\begin{frame}{References}
+    \bibliographystyle{plain}
+    \bibliography{references.bib}
+\end{frame}
+
+\endframeone{\bfseries Thank You!}
+
+\endframetwo{\bfseries Thank You!}{\bfseries Any Questions?}
+
+\end{document}

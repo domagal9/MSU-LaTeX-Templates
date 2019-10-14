@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb,amsthm, bm,enumerate,tikz, polynom, lipsum, tcolorbox}
+\usepackage[margin=1in]{geometry}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\RR}{\mathbf{R}}
+\newcommand{\ZZ}{\mathbf{Z}}
+
+\newenvironment{q}
+ {\item}
+ {}
+ 
+%Change Solution to Proof here if you'd like
+\newenvironment{soln}
+ {\medskip\underline{\textbf{Solution:}}} 
+ 
+\begin{document}
+\thispagestyle{empty}
+\title{Homework Assignment Template}
+\noindent Name:  %\rule{3in}{0.5pt} 
+\hfill Class and Section\\
+Due Date: \hfill Homework Assignment \#
+
+\bigskip
+
+\begin{enumerate}[\bf(1)]
+%\itemsep=20pt
+
+\begin{q}
+Write Questions In This Environment \\ 
+There are three different examples of environments for solutions.
+\end{q}
+
+\begin{soln}
+\lipsum[2]
+\end{soln}
+
+
+
+\begin{q}
+\lipsum[1]
+\end{q}
+
+\begin{proof}
+\lipsum[2]
+\end{proof}
+
+\begin{q}
+\lipsum[1]
+\end{q}
+
+\begin{tcolorbox}
+\lipsum[2]
+\end{tcolorbox}
+
+
+
+\end{enumerate}
+\end{document}

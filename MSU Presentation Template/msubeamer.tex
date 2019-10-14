@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsfonts,indentfirst,setspace,xcolor,enumitem,lmodern}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{listings}
+\lstdefinestyle{all}{
+  backgroundcolor=\color{gray!5},
+  frame=lines,
+  showtabs=False,
+  showspaces=False,
+  showstringspaces=False,
+  basicstyle={\small\ttfamily\singlespacing},
+  aboveskip=0.0em,
+  belowskip=.1in,
+  xleftmargin=.1in,
+  xrightmargin=.1in,
+}
+
+\lstnewenvironment{tex}
+  {\lstset{
+   language=[LaTeX]TeX,
+   style=all,
+   texcsstyle=*\color{blue}\bfseries,
+   commentstyle={\color{red}},
+   keywordstyle={\color{blue}\bfseries},
+   stringstyle={\color{green!50!black}},
+   morekeywords={maketitleframe, subsection, institute, endframeone, endframetwo, usetheme}
+  }}
+  {}
+\lstnewenvironment{bash}
+  {\lstset{language=bash,style=all}}
+  {}
+  
+\newcommand{\zip}{\lstinline[basicstyle=\ttfamily]!msubeamer.zip!}
+\newcommand{\code}[1]{\lstinline[basicstyle=\ttfamily]!#1!}
+
+\title{User Documentation for \zip}
+\author{AMS Graduate Student Chapter}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+\zip\ is a zipped folder containing all of documents to provide a  Michigan State University Beamer theme for making presentations in \LaTeX.  The complete theme was originally created by Dr. Patrick Davis in 2014 for Central Michigan University.  The current version was updated in October 2019 by Rachel Domagalski and configured for use at Michigan State University. 
+
+Together with the sample presentation (provided as a \code{.tex} and \code{.pdf}), this document is designed to assist individuals in making their own presentations with this theme.  Anyone at MSU who would like to download \zip\ and use the theme is more than welcome to do so.
+\end{abstract}
+
+\tableofcontents
+
+\section*{Getting Started}
+
+In \zip, you will find the following:
+\begin{description}
+     \item[Beamer Style Files] (with \lstinline[basicstyle=\ttfamily]!.sty! extensions) These files are the primary documents that define the MSU Beamer theme.  The color theme sets various Beamer elements to use the official MSU colors found in the Web Style Guide and the Brand Identity Standards.  The theme file defines everything else for the MSU Beamer theme.
+     
+     \item[MSU Logo] (\lstinline[basicstyle=\ttfamily]!MSU-Wordmark-White.eps!) Used in the title and end slides.
+     
+     \item[Background Picture Files] (with \lstinline[basicstyle=\ttfamily]!.png! extensions) These files provide background decorations for the title and end slides.
+     
+     \item[Sample Presentation] (with \lstinline[basicstyle=\ttfamily]!.tex! and \lstinline[basicstyle=\ttfamily]!.pdf! extensions) These files provide an example presentation that may be modified by users.
+\end{description}
+
+In order to use the theme, the beamer style files, the MSU logo, and the background picture file of your choice must be located somewhere in the \LaTeX\ search path.  You may place these files in the same folder as your document; however, we recommend you create a folder in your \LaTeX\ home directory and put all of the \zip\ files there.  More than likely, this means you should unzip the folder and put the files in the following locations on your computer (you may have to create the tree, if needed):
+
+\begin{tex}
+%% For Windows users:
+C:\Users\<user name>\texmf\tex\latex\local\msubeamertheme
+
+%% For MacOS users:
+/Users/<user name>/Library/texmf/tex/latex/local/msubeamertheme
+
+%% For Linux users:
+/home/<user name>/texmf/tex/latex/msubeamertheme
+\end{tex}
+
+After putting the files in an appropriate location, you may use the theme in the standard way:
+\begin{tex}
+\documentclass{beamer}
+\usetheme{msubeamer}
+\end{tex}
+
+
+\section{Class \& Theme Options}
+
+The theme should be able to handle most options passed to the Beamer class.  For the \lstinline[basicstyle=\ttfamily]!aspectratio! option, we recommend:
+\begin{tex}
+\documentclass[aspectratio=169]{beamer}
+\end{tex}
+to match the aspect ratio most projectors use today.  This will automatically reformat the title and end slides to look acceptable in the wide format.
+
+The MSU Beamer theme also has an option to set the grey pattern on the background.  This may be given as such:
+\begin{tex}
+\usetheme[background=<file name>]{msubeamer}
+\end{tex}
+There are a number of choices included in \zip, although the user may use any \lstinline[basicstyle=\ttfamily]!.png! file he or she chooses so long as it is located in the \LaTeX search path (see above).  The included choices are:
+\begin{tex}
+windows,chevron,diamonds (default),antique,circles,ornate,
+eyes,hexagons
+\end{tex}
+If the option is not given, the theme will default to \lstinline[basicstyle=\ttfamily]!windows!.
+
+If the default styling is too busy for your personal tastes, you may also provide the \lstinline[basicstyle=\ttfamily]!simple! option as such:
+\begin{tex}
+\usetheme[simple]{msubeamer}
+\end{tex}
+This will significantly streamline the presentation.  This option removes the required access to a background picture in the default styling.
+
+\section{Preamble}
+
+The class file automatically loads the following packages:
+\begin{tex}
+color,etoolbox,lmodern,tikz,xparse
+\end{tex}
+These are common packages; so most \LaTeX\ distributions will already have them.  If for some reason your distribution does not, you will need to install them to use the class file.  Any other package that your document requires will need to be loaded in the preamble.
+
+In addition, your preamble should include the following commands:
+\begin{tex}
+\title[...]{...}  % Title
+\author{...}      % Author Name
+\institute{...}   % Name of Conference, ...
+\date{...}        % date of the presentation
+\end{tex}
+
+The command:
+\begin{tex}
+\title[<short title>]{<title>}
+\end{tex}
+is used for two places in the document.  Primarily, the argument in \lstinline[basicstyle=\ttfamily]!<title>! will appear in the title frame.  The argument in \lstinline[basicstyle=\ttfamily]!<short title>! will appear at the bottom right of each slide.
+
+The command:
+\begin{tex}
+\institute{...}
+\end{tex}
+should include the name of the conference or seminar the presentation is for.  The reason for this odd naming is to make use of the built-in \lstinline[basicstyle=\ttfamily]!\maketitle! Beamer command when generating the title page.
+
+\section{Title \& Closing Slides}
+
+The included style files define special commands to generate a MSU-themed beginning and closing frames.  They create the entire slide and should not be included in a \lstinline[basicstyle=\ttfamily]!frame! environment.
+
+\begin{description}
+\item[Title Frame] To generate the title slide:
+\begin{tex}
+\maketitleframe     % generates the title frame
+\end{tex}
+
+\item[Closing Frame] To generate the closing slide, there are two options.  One is for a slide with a single line of text, and the other is for a slide with two lines of text.
+\begin{tex}
+\endframeone{<line one>}             % generates closing slide
+                                     % with one line of text
+
+\endframetwo{<line one>}{<line two>} % generates closing slide
+                                     % with two lines of text
+\end{tex}
+\end{description}
+
+\section{General Minimal Outline}
+
+\begin{tex}
+\documentclass[<options>]{msuthesis}
+%% presentation information
+\title[<short title>]{<title>}
+\author{<your name>}
+\institute{<conference name>}
+\date{<presentation date>}
+
+\begin{document}
+%% create the title frame
+\maketitleframe
+
+%% the main body of the work
+\section{...}
+...
+
+\subsection{...}
+...
+
+\begin{frame}
+...
+\end{frame}
+
+%% create the closing frame
+\endframetwo{<line one>}{<line two>}
+
+\end{document}
+\end{tex}
+
+\end{document}
+

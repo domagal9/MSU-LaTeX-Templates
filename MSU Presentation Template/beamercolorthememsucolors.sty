@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The MSU Beamer Colors Theme
+%%
+%% For making Beamer presentations in LaTeX at
+%% Michigan State University
+%%
+%% Originally Commissioned by the
+%% AMS Graduate Student Chapter at CMU
+%% Created by Dr. Patrick Davis
+%%
+%% Redesigned for use at MSU by Rachel Domagalski
+%%
+%% Original Version: 4 September 2014
+%% Latest Update: 13 October 2019
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ProvidesPackage{beamercolorthememsucolors}[2019/10/13]
+
+% \mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%        Define the Official MSU Colors      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% From Design and Visual Identity 
+
+%% PRIMARY COLORS (backgrounds, headlines, buttons, containers)
+\definecolor{msugreen}{HTML}{18453B}
+\definecolor{msuwhite}{HTML}{FFFFFF}
+
+%% SECONDARY COLORS (backgounds for pages, containers, buttons, etc)
+\definecolor{msubrightgreen}{HTML}{0DB14B}
+\definecolor{msugrey}{HTML}{97A2A2}
+\definecolor{msubrightorange}{HTML}{F08521}
+\definecolor{msuteal}{HTML}{008183}
+\definecolor{msublue}{HTML}{909AB7}
+\definecolor{msublack}{HTML}{535054}
+\definecolor{msuyellow}{HTML}{D1DE3F}
+\definecolor{msubiege}{HTML}{E8D9B5}
+\definecolor{msulightorange}{HTML}{C89A58}
+\definecolor{msuolive}{HTML}{94AE4A}
+\definecolor{msupurple}{HTML}{6E005F}
+\definecolor{msured}{HTML}{CB5A28}
+
+% MSU TEXT COLORbeamercolortheme
+\definecolor{msutext}{HTML}{333333}
+
+%% Self Defined (not official, different saturation of official colors) %%
+\definecolor{msulightgreen}{HTML}{ecf8f6}
+\definecolor{msudarkgreen}{HTML}{0D2620}
+\definecolor{msubrightlightgreen}{HTML}{e7fdf0}
+\definecolor{msulighterpurple}{HTML}{ffe6fc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%        Set Color Options                   %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamercolor{structure}{fg=msugreen,bg=msudarkgreen}
+
+%Slide Titles
+\setbeamercolor{titlelike}{fg=white,bg=msugreen}
+
+%% Standard Block
+\setbeamercolor{block title}{fg=white,bg=msugreen}
+\setbeamercolor{block body}{fg=black,bg=msulightgreen}
+
+%% Alert Block
+\setbeamercolor{block title alerted}{fg=msuwhite,bg=msupurple}
+\setbeamercolor{block body alerted}{fg=black,bg=msulighterpurple}
+
+%% Example Block
+\setbeamercolor{block title example}{fg=msuwhite,bg=msubrightgreen}
+\setbeamercolor{block body example}{fg=black,bg=msubrightlightgreen}
+
+%% Header Footer
+\setbeamercolor{section in head/foot}{bg=msubrightorange,fg=msubrightorange}
+\setbeamercolor{subsection in head/foot}{bg=msubrightorange,fg=msubrightorange}
+\setbeamercolor{author in head/foot}{bg=msubrightorange,fg=msubrightorange}
+\setbeamercolor{title in head/foot}{bg=msubrightorange,fg=msubrightorange}
+
+\setbeamercolor{headline}{bg=msubrightorange,fg=msubrightorange}
+\setbeamercolor{footline}{bg=msubrightorange,fg=msubrightorange}
+\setbeamercolor{institute in head/foot}{bg=msubrightorange,fg=msubrightorange}
+
+% \mode<all>

@@ -1,0 +1,198 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsfonts,indentfirst,setspace,xcolor,enumitem,lmodern}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{listings}
+\lstdefinestyle{all}{
+  backgroundcolor=\color{gray!5},
+  frame=lines,
+  showtabs=False,
+  showspaces=False,
+  showstringspaces=False,
+  basicstyle={\small\ttfamily\singlespacing},
+  aboveskip=0.0em,
+  belowskip=.1in,
+  xleftmargin=.1in,
+  xrightmargin=.1in,
+}
+
+\lstnewenvironment{tex}
+  {\lstset{
+   language=[LaTeX]TeX,
+   style=all,
+   texcsstyle=*\color{blue}\bfseries,
+   commentstyle={\color{red}},
+   keywordstyle={\color{blue}\bfseries},
+   stringstyle={\color{green!50!black}},
+   morekeywords={advisor,institute,colwidth}
+  }}
+  {}
+\lstnewenvironment{bash}
+  {\lstset{language=bash,style=all}}
+  {}
+  
+\newcommand{\cls}{\lstinline[basicstyle=\ttfamily]!msuposter.cls!}
+\newcommand{\code}[1]{\lstinline[basicstyle=\ttfamily]!#1!}
+
+\title{User Documentation for \cls}
+\author{AMS Graduate Student Chapter}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+\cls\ is a \LaTeX\ class file to create academic and technical posters for members of the Michigan State University community.  It is built on the Beamer class file and uses the \code{beamerposter} package.
+
+Together with the sample presentation (provided as a \code{.tex} and \code{.pdf}), this document is designed to assist individuals in making their own posters.  Anyone at MSU who would like to download \cls\ and use the file is more than welcome to do so.
+
+This class was originally developed by Dr. Patrick Davis and Rachel Domagalski at Central Michigan University and has been adapted for use for Michigan State University by Rachel Domagalski.
+
+\end{abstract}
+
+\tableofcontents
+
+\section*{Getting Started}
+
+In order to use \cls, the accompanying files must be located somewhere in the \LaTeX\ search path.  You may place them in the same folder as your document; however, we recommend you create a folder in your \LaTeX\ home directory and put all of the \cls\ files there.  More than likely, this means you should unzip the folder and put the files in the following locations on your computer (you may have to create the tree, if needed):
+
+\begin{tex}
+%% For Windows users:
+C:\Users\<user name>\texmf\tex\latex\local\msuposter
+
+%% For MacOS users:
+/Users/<user name>/Library/texmf/tex/latex/local/msuposter
+
+%% For Linux users:
+/home/<user name>/texmf/tex/latex/msuposter
+\end{tex}
+
+After putting the files in an appropriate location, you may use the class file in the standard way:
+\begin{tex}
+\documentclass[...]{msuposter}
+\end{tex}
+
+\section{Preamble}
+
+The class file automatically loads the following packages:
+\begin{tex}
+amscd,amsmath,amsfonts,amssymb,color,exscale,etoolbox,fontenc,
+graphicx,inputenc,lmodern,mathtools,tikz,xcolor,xparse
+\end{tex}
+These are common packages; so most \LaTeX\ distributions will already have them.  If for some reason your distribution does not, you will need to install them to use the class file.  Any other package that your document requires will need to be loaded in the preamble.
+
+In addition, your preamble should include the following commands:
+\begin{tex}
+\title{...}         % Poster Title
+\author{...}        % Author Name(s)
+\institute{...}     % Name of Department, ...
+\end{tex}
+These are all required by \cls.
+
+The command:
+\begin{tex}
+\advisor[...]{...}   % Advisor Name(s)
+\end{tex}
+should be included if the poster was completed under the mentorship of an advisor.  If included, it will add a line below the poster author(s).  The optional argument should reflect the number of advisors, if there are multiple advisors for the poster.
+
+\section{Setting Up the Columns}
+
+\cls\ uses the \code{columns} environment to divide a beamer frame into sections.  See the Minimal Outline at the end of this document to see the general layout.  The \code{columns} environment will handle any number of columns provided that the total column widths do not exceed the page limitations.
+
+It's not required, but we suggest you use a command to set the width of the columns.  You may do so as such:
+\begin{tex}
+\newcommand{\colwidth}{...}  % Set column width
+\end{tex}
+It's best to set this as a portion of the \code{linewidth}.  In particular, we suggest either:
+\begin{tex}
+\newcommand{\colwidth}{0.3\linewidth}   % For three columns
+\newcommand{\colwidth}{0.22\linewidth}  % For four columns
+\end{tex}
+
+\section{Adding Blocks}
+
+\cls\ provides a number of block types to fill in the columns.  The three primary blocks are:
+\begin{tex}
+\begin{block}{...}         % Standard block
+ ...
+\end{block}
+
+\begin{exampleblock}{...}  % Example block
+ ...
+\end{exampleblock}
+
+\begin{alertblock}{...}    % Alerted block
+ ...
+\end{alertblock}
+\end{tex}
+The argument following the start of the environment sets the block title.  The standard block title is white text on a maroon background.  The example block title is blue text on a gray background, and the alerted block title is maroon text on a gold background.
+
+You may also use environments from the \code{amsthm} package to generate blocks.  For example:
+\begin{tex}
+\begin{definition}[...]    % Definition block
+...
+\end{definition}
+
+\begin{theorem}[...]       % Theorem block
+...
+\end{theorem}
+\end{tex}
+
+
+\newpage
+\section{Minimal Outline}
+
+\begin{tex}
+\documentclass[<options>]{msuposter}
+
+%% REQUIRED
+\title{<title>}
+\author{<name>}
+\institute{<department>}
+
+%% OPTIONAL
+\advisor[<num>]{<name>}
+
+%% SET COLUMN WIDTH
+\newcommand{\colwidth}{<column width>}
+
+\begin{document}
+\begin{frame}{}
+\begin{columns}[t] % the t option forces the blocks to the top
+
+\begin{column}{\colwidth}
+
+\begin{block}{<block title>}
+...
+\end{block}
+
+\end{column}
+
+%% COLUMN DIVIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{column}{\colwidth}
+
+\begin{block}{<block title>}
+...
+\end{block}
+ 
+\end{column}
+
+%% COLUMN DIVIDE %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{column}{\colwidth}
+
+\begin{block}{<block title>}
+...
+\end{block}
+
+\end{column}
+
+\end{columns}
+\end{frame}
+\end{document}
+\end{tex}
+
+\end{document}
+
