@@ -30,10 +30,6 @@ https://ctan.org/pkg/msu-thesis?lang=en
 Other formatting guidelines provided by MSU Graduate School can be found here:
 https://grad.msu.edu/etd
 
-## For Fun: A LaTeX Typesetting Game
-
-https://texnique.xyz/
-
 ## LaTeX Resources
 
 For symbols: http://detexify.kirelabs.org/classify.html
@@ -41,3 +37,7 @@ For symbols: http://detexify.kirelabs.org/classify.html
 For tables: https://www.tablesgenerator.com/
 
 For Tikz: https://www.mathcha.io/
+
+## For Fun
+
+A LaTeX Typesetting Game: https://texnique.xyz/
