@@ -26,6 +26,7 @@ https://brand.msu.edu/index.html
 
 If you are writing your dissertation or thesis, there is a LaTeX class available here:
 https://ctan.org/pkg/msu-thesis?lang=en
+
 Other formatting guidelines provided by MSU Graduate School can be found here:
 https://grad.msu.edu/etd
 
@@ -36,5 +37,7 @@ https://texnique.xyz/
 ## LaTeX Resources
 
 For symbols: http://detexify.kirelabs.org/classify.html
+
 For tables: https://www.tablesgenerator.com/
+
 For Tikz: https://www.mathcha.io/
