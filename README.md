@@ -22,5 +22,12 @@ https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
 MSU brand identity guidelines can be found here:
 https://brand.msu.edu/index.html
 
+## MSU Dissertation / Thesis Class
 
+If you are writing your dissertation or thesis, there is a LaTeX class available here:
+https://ctan.org/pkg/msu-thesis?lang=en
+Other formatting guidelines provided by MSU Graduate School can be found here:
+https://grad.msu.edu/etd
 
+## For Fun: A LaTeX Typesetting Game
+https://texnique.xyz/
