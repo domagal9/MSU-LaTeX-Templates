@@ -1,7 +1,9 @@
 \documentclass{article}
 
-\usepackage{amsmath,amssymb,amsthm, bm,enumerate,tikz, polynom, lipsum, tcolorbox}
+\usepackage{amsmath,amssymb,amsthm, bm,enumerate, polynom, lipsum, tcolorbox}
 \usepackage[margin=1in]{geometry}
+\usepackage{tikz}
+\usepackage{fancyhdr, framed}
 
 \newcommand{\dd}{\mathrm{d}}
 \newcommand{\ds}{\displaystyle}
@@ -10,13 +12,21 @@
 \newcommand{\ZZ}{\mathbf{Z}}
 
 \newenvironment{q}
- {\item}
- {}
+{\begin{framed} \item}
+{\end{framed}}
  
 %Change Solution to Proof here if you'd like
 \newenvironment{soln}
  {\medskip\underline{\textbf{Solution:}}} 
  
+%Headers and Footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Your Name Here}
+\lhead{Your Title Here}
+\rfoot{Page \thepage}
+
+
 \begin{document}
 \thispagestyle{empty}
 \title{Homework Assignment Template}
@@ -55,7 +65,15 @@ There are three different examples of environments for solutions.
 \begin{tcolorbox}
 \lipsum[2]
 \end{tcolorbox}
+\newpage
 
+\begin{q}
+\lipsum[1]
+\end{q}
+
+\begin{soln}
+\lipsum[2]
+\end{soln}
 
 
 \end{enumerate}
