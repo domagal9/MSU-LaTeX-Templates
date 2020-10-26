@@ -17,6 +17,7 @@
 \RequirePackage{kpfonts}
 \RequirePackage[english]{babel}
 \RequirePackage{microtype}
+\RequirePackage{lmodern}
 
 \renewcommand{\ps@firstpage}%
   {%
